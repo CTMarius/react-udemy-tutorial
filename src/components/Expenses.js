@@ -6,7 +6,7 @@ export default function Expenses(props) {
   return (
     <Card className="expenses">
       {props.expenses.map((props) => (
-        <ExpenseItems expenseData={props}> {props} </ExpenseItems>
+        <ExpenseItems expenseData={props} /> 
       ))}
     </Card>
   );
