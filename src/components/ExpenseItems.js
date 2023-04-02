@@ -4,7 +4,6 @@ import ExpenseDate from "./ExpenseDate";
 import Price from "./Price";
 
 export default function ExpenseItems(props) {
-  console.log(props)
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.expenseData.date} />
