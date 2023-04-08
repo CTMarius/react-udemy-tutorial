@@ -1,5 +1,7 @@
 import "./ExpensePrice.css";
 
-export default function ExpensePrice(props) {
+const ExpensePrice = (props) => {
   return <div className="price">${props.price}</div>;
 }
+
+export default ExpensePrice;
