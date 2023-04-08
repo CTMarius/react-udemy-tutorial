@@ -2,12 +2,15 @@ import "./ExpenseItems.css";
 import Card from "../UI/Card";
 import ExpenseDate from "./ExpenseDate";
 import ExpensePrice from "./ExpensePrice";
+import React, { useState } from "react";
 
 const ExpenseItems = (props) => {
+  
+  const [title, setTitle] = useState(props.expenseData.title); // this is a hook
 
-  let title = props.expenseData.title;
-  const ClickHandler = () => {    
-    title = "updated";
+  const ClickHandler = () => { 
+    let newTitle = prompt("Please enter your new title");
+    setTitle(newTitle);     
     console.log(title);
   };
 
