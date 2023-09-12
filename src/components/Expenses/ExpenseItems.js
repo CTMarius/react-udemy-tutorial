@@ -7,11 +7,22 @@ import React, { useState } from "react";
 const ExpenseItems = (props) => {
   
   const [title, setTitle] = useState(props.expenseData.title); // this is a hook
-
+  
+  const nullChecker = (newTitle) => {
+    if (newTitle === null) {
+      newTitle = props.expenseData.title;
+    }else if (newTitle === undefined) {
+      newTitle = props.expenseData.title;
+    }else if (!newTitle.trim().length) {
+      newTitle = props.expenseData.title;
+    }
+    return newTitle;
+  }
   const ClickHandler = () => { 
     let newTitle = prompt("Please enter your new title");
-    setTitle(newTitle);     
-    console.log(title);
+    newTitle = nullChecker(newTitle);
+    setTitle(newTitle);   
+    props.expenseData.title = newTitle;      
   };
 
   return (
